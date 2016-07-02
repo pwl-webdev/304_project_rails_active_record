@@ -1,0 +1,19 @@
+You are building an online learning platform (much like this!). 
+You've got many different courses, each with a title and description, and each course has multiple lessons. 
+Lesson content consists of a title and body text.
+
+COURSES
+id: integer
+created_at: datetime
+updated_at: datetime
+title: string [unique, present]
+description: text [present]
+HAS_MANY_LESSONS
+
+LESSONS
+id: integer
+created_at: datetime
+updated_at: datetime
+title: string [unique, present]
+body: text [present]
+BELONGS_TO_COURSE

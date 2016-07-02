@@ -1,0 +1,27 @@
+You want to build a message board like Hacker News. Users can post links. Other users can comment on these submissions or comment on the comments. How would you make sure a comment knows where in the heirarchy it lives?
+
+USERS
+id:integer
+created_at:datetime
+updated_at:datetime
+username: string [present]
+email: string [present, unique]
+HAS_MANY_LINKS
+HAS_MANY_COMMENTS
+
+LINKS
+id:integer
+created_at:datetime
+updated_at:datetime
+link: string [present]
+BELONGS_TO_USER
+HAS_MANY_COMMENTS
+
+
+COMMENT
+id:integer
+created_at:datetime
+updated_at:datetime
+body: text [present]
+BELONGS_TO_USER
+HAS_MANY_COMMENTS

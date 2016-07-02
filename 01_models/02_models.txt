@@ -1,0 +1,37 @@
+You are building the profile tab for a new user on your site. 
+You are already storing your user's username and email, but now you want to collect demographic information like city, state, country, age and gender. 
+Think -- how many profiles should a user have? How would you relate this to the User model?
+
+USERS
+id:integer
+created_at:datetime
+updated_at:datetime
+username: string [present]
+email: string [present, unique]
+age: integer [present]
+sex: string [present]
+BELONGS_TO_CITY
+BELONGS_TO_STATE
+BELONGS_TO_COUNTRY
+
+COUNTRIES
+id:integer
+created_at:datetime
+updated_at:datetime
+country: string [present, unique]
+HAS_MANY_STATES
+
+STATES
+id:integer
+created_at:datetime
+updated_at:datetime
+state: string [present, unique]
+HAS_MANY_CITIES
+BELONGS_TO_COUNTRY
+
+CITIES
+id:integer
+created_at:datetime
+updated_at:datetime
+city: string [present]
+BELONGS_TO_STATE
